@@ -573,10 +573,109 @@ const simpleTheme = toMerged(defaultTheme, {
   },
 })
 
+const modernTheme = toMerged(defaultTheme, {
+  base: {
+    // 使用默认的主题色变量，而不是硬编码的颜色值
+  },
+  block: {
+    container: {},
+    p: {
+      'margin': `0 0 20px`,
+      'padding': `0`,
+      'line-height': `1.8em`,
+      'color': `#3a3a3a`,
+    },
+
+    h1: {
+      'font-size': `2.1em`,
+      'line-height': `1.1em`,
+      'padding-top': `16px`,
+      'padding-bottom': `10px`,
+      'margin-bottom': `4px`,
+      'border-bottom': `1px solid var(--md-primary-color)`,
+      'color': `#515151`,
+      'font-weight': `700`,
+    },
+
+    h2: {
+      'margin-bottom': `35px`,
+      'font-weight': `bold`,
+      'background': `linear-gradient(#fff 60%, var(--md-primary-color) 40%)`,
+      'color': `#515151`,
+      'padding': `2px 13px 2px`,
+      'margin': `0 auto 35px`,
+      'display': `table`,
+      'text-align': `center`,
+    },
+
+    h3: {
+      'line-height': `1.4`,
+      'padding-top': `10px`,
+      'margin': `10px 0 5px`,
+      'color': `#515151`,
+      'font-weight': `700`,
+      'font-size': `1.0em`,
+      'padding-left': `20px`,
+      'border-left': `3px solid var(--md-primary-color)`,
+    },
+
+    blockquote: {
+      'border-left-color': `var(--md-primary-color)`,
+      'background': `color-mix(in srgb, var(--md-primary-color) 10%, transparent)`,
+    },
+
+    blockquote_p: {
+      color: `#595959`,
+    },
+
+    hr: {
+      'border-top': `1px solid var(--md-primary-color)`,
+      'margin': `20px 0px`,
+    },
+
+    image: {
+      'width': `100%`,
+      'border-radius': `5px`,
+      'display': `block`,
+      'margin-bottom': `15px`,
+      'height': `auto`,
+    },
+
+    code_pre: {
+      display: `block`,
+    },
+
+    ul: {},
+
+    ol: {},
+  },
+  inline: {
+    codespan: {
+      'color': `var(--md-primary-color)`,
+      'background-color': `color-mix(in srgb, var(--md-primary-color) 10%, transparent)`,
+      'padding': `3px`,
+      'margin': `3px`,
+    },
+
+    strong: {},
+
+    link: {
+      'border': `none`,
+      'text-decoration': `none`,
+      'color': `var(--md-primary-color)`,
+    },
+
+    del: {
+      color: `var(--md-primary-color)`,
+    },
+  },
+})
+
 export const themeMap = {
   default: defaultTheme,
   grace: graceTheme,
   simple: simpleTheme,
+  modern: modernTheme,
 }
 
 export const themeOptions: IConfigOption<keyof typeof themeMap>[] = [
@@ -594,5 +693,10 @@ export const themeOptions: IConfigOption<keyof typeof themeMap>[] = [
     label: `简洁`,
     value: `simple`,
     desc: `@okooo5km`,
+  },
+  {
+    label: `现代`,
+    value: `modern`,
+    desc: ``,
   },
 ]
